@@ -1,5 +1,5 @@
 function square(number) {
-  return number * number;
+  return number * number
 }
 
 function getSquaredElementsAtProperty(obj, property) {
