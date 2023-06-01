@@ -1,26 +1,29 @@
-# 스택 수열
 import sys
+input = sys.stdin.readline
 
-n = int(sys.stdin.readline())
-cnt = 1
+n = int(input())
+
 stack = []
-oper = []
-result = True
+ans = []
+cnt = 1
+flag = True
+for _ in range(n):
+    num = int(input())
 
-for i in range(n):
-    num = int(sys.stdin.readline())
     while cnt <= num:
         stack.append(cnt)
-        oper.append('+')
+        ans.append('+')
         cnt += 1
+
     if stack[-1] == num:
         stack.pop()
-        oper.append('-')
-    else:
-        result = False
+        ans.append('-')
 
-if result == False:
-    print('NO')
+    else:
+        flag = False
+
+if flag:
+    for a in ans:
+        print(a)
 else:
-    for i in oper:
-        print(i)
+    print('NO')
