@@ -1,18 +1,14 @@
-# 제로
 import sys
+input = sys.stdin.readline
 
-K = int(sys.stdin.readline())
-stack = []
-sum = 0
+K = int(input())
 
+numbers = []
 for _ in range(K):
-    num = int(sys.stdin.readline())
-    if num != 0:
-        stack.append(num)
+    num = int(input())
+    if num == 0:
+        numbers.pop()
     else:
-        stack.pop()
+        numbers.append(num)
 
-for i in range(len(stack)):
-    sum += stack[i]
-
-print(sum)
+print(sum(numbers))
